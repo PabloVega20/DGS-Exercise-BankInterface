@@ -1,0 +1,38 @@
+type Query{
+    customer(id: ID!): Customer!
+    customers: [Customer!]!
+}
+
+type Customer{
+    id: ID!
+    alias: String!
+    name: String!
+    accounts: [Account!]!
+    promos: [Promo!]!
+}
+
+type Account{
+    iban: String!
+    balance: Float!
+    lastTransactions: [Transaction!]!
+    operations: [Operation!]!
+}
+
+type Promo{
+    id: ID!
+    name: String!
+    description: String!
+}
+
+type Transaction{
+    category: String!
+    description: String!
+    amount: Float!
+    date: String!
+}
+
+type Operation{
+    id: ID!
+    name: String!
+    icon: String!
+}
